@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comment Analyser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- The black frame and blue screen echo the reference image -->
+  <div class="monitor">
+    <div class="screen">
+      <main class="app">
+
+        <header class="app-header">
+          <h1>Comment Analyser</h1>
+          <p>Enter a comment to preview how it could be scored for sentiment and moderation.</p>
+        </header>
+
+        <!-- Always visible: results are not real AI output -->
+        <div class="notice" role="note">
+          <strong>Simulated results.</strong>
+          This prototype uses simple keyword rules in the browser. No AI model or server is involved yet.
+        </div>
+
+        <form id="comment-form" novalidate>
+          <label for="comment" class="pill"><span aria-hidden="true">+</span> Add a comment</label>
+
+          <div class="card">
+            <textarea id="comment" name="comment" rows="5" maxlength="500"
+              placeholder="Type or paste a comment here…"
+              aria-describedby="input-error counter"></textarea>
+
+            <div class="field-meta">
+              <p id="input-error" class="error" role="alert"></p>
+              <p id="counter" class="counter">0 / 500</p>
+            </div>
+
+            <div class="actions">
+              <button type="submit" id="analyze-btn" class="btn btn-primary">Analyze Comment</button>
+              <button type="button" id="clear-btn" class="btn btn-secondary">Clear</button>
+            </div>
+
+            <div class="samples">
+              <p id="samples-label">Or try a sample comment:</p>
+              <div id="samples" role="group" aria-labelledby="samples-label"></div>
+            </div>
+          </div>
+        </form>
+
+        <!-- Results (or empty / loading / error state) are drawn here by script.js -->
+        <section id="results" aria-live="polite" aria-busy="false" aria-label="Analysis results"></section>
+
+      </main>
+    </div>
+    <p class="brand">Comment Analyser</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

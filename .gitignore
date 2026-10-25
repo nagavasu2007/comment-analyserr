@@ -1,0 +1,38 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Secrets and environment variables
+.env
+.env.*
+!.env.example
+
+# Credentials
+*.pem
+*.key
+credentials.json
+client_secret*.json
+
+# Downloaded models and caches
+.cache/
+models/
+*.safetensors
+*.pt
+*.pth
+*.bin
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

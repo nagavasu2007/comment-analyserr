@@ -13,7 +13,7 @@
    ========================================================== */
 
 /* ---------- Settings ---------- */
-const API_URL = "http://127.0.0.1:8000/analyze";
+const API_URL = "https://comment-analyserr.onrender.com/analyze";
 const REQUEST_TIMEOUT_MS = 15000; // give up if the server takes longer than this
 const MAX_LENGTH = 500;
 const MIN_LENGTH = 3;

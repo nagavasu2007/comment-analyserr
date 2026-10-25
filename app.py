@@ -77,11 +77,9 @@ def analyze(request: CommentRequest):
             },
         }
 
-    except Exception:
+    except Exception as e:
+        print(f"AI inference error: {type(e).__name__}: {e}", flush=True)
         raise HTTPException(
             status_code=502,
-            detail=(
-                "The AI provider could not analyze this comment. "
-                "Please try again shortly."
-            ),
+            detail=f"AI inference failed: {type(e).__name__}: {e}",
         )
